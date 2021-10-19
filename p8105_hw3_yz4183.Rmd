@@ -190,7 +190,7 @@ ny_brfss %>%
 1. Load, tidy, and wrangle the data in accelerometer dataset.
 ```{r, warning=FALSE, message=FALSE}
 accel_df = 
-  read_csv("accel_data.csv") %>% 
+  read_csv("./data/accel_data.csv") %>% 
   janitor::clean_names() %>% 
   mutate(day_type = ifelse((day == "Saturday" | day == "Sunday"), "weekend", "weekday")) %>% 
   relocate(week, day_id, day, day_type) %>% 
@@ -214,6 +214,7 @@ accel_by_day =
 
 accel_by_day %>% knitr::kable(digits = 0)
 ```
+
 There seems to be no apparent trends as it was shown in the table. 
 
 3. Make a single-panel plot that shows the 24-hour activity time courses for each day and use color to indicate day of the week and describe any patterns or give conclusions. 
