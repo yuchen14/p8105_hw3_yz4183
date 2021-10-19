@@ -218,7 +218,7 @@ There seems to be no apparent trends as it was shown in the table.
 
 3. Make a single-panel plot that shows the 24-hour activity time courses for each day and use color to indicate day of the week and describe any patterns or give conclusions. 
 
-```{r, fig.dim = c(5, 10) }
+```{r, fig.dim = c(10, 6)}
 accel_long = 
   accel_df %>% 
   pivot_longer(activity_1:activity_1440, names_to = "minute_of_day", values_to = "activity") %>% 
