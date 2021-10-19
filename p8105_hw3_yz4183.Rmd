@@ -33,6 +33,7 @@ instacart %>%
   summarise(count = n()) %>% 
   ggplot(aes(x = day_of_week, y = count)) + geom_bar(stat = "identity") + labs(x = "Day of Week", y = "Count", title = "Numbers of Orders on Each day of a Week")
 ```
+
 The plot shows most users made their orders on Sunday. 
 
 I also made a plot to see how long would the users order again since their last orders. 
@@ -44,6 +45,7 @@ instacart %>%
   summarise(count = n()) %>% 
   ggplot(aes(x = days_since_prior_order, y = count)) + geom_bar(stat = "identity") + labs(x = "Days Since Last Order", y = "Count", title = "Number of Days Since Last Order")
 ```
+
 The plot shows most people reorder after 30 days and some people reorder after 8 days. 
 
 2. How many aisles are there, and which aisles are the most items ordered from?  
@@ -104,14 +106,6 @@ hour_df %>% knitr::kable(digits = 0)
 ```
 
 ## Problem 2
-
-First, do some data cleaning:
-
-format the data to use appropriate variable names;
-focus on the “Overall Health” topic
-include only responses from “Excellent” to “Poor”
-organize responses as a factor taking levels ordered from “Poor” to “Excellent”
-
 1. Load and clean the data; focus on the "Overall Health" topic; 
 ```{r}
 data("brfss_smart2010")
@@ -193,8 +187,6 @@ ny_brfss %>%
 
 
 ## Problem 3
-This problem uses five weeks of accelerometer data collected on a 63 year-old male with BMI 25, who was admitted to the Advanced Cardiac Care Center of Columbia University Medical Center and diagnosed with congestive heart failure (CHF). The data can be downloaded here. In this spreadsheet, variables activity.* are the activity counts for each minute of a 24-hour day starting at midnight.
-
 1. Load, tidy, and wrangle the data in accelerometer dataset.
 ```{r, warning=FALSE, message=FALSE}
 accel_df = 
@@ -226,7 +218,7 @@ There seems to be no apparent trends as it was shown in the table.
 
 3. Make a single-panel plot that shows the 24-hour activity time courses for each day and use color to indicate day of the week and describe any patterns or give conclusions. 
 
-```{r}
+```{r, fig.dim = c(5, 10) }
 accel_long = 
   accel_df %>% 
   pivot_longer(activity_1:activity_1440, names_to = "minute_of_day", values_to = "activity") %>% 
