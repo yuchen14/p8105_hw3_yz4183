@@ -234,3 +234,4 @@ accel_long %>%
   labs(x = "Time", y = "Activity", title = "Daily Activity By Minute For Five Weeks")
 ```
 
+On most days of week the activity counts were the highest before noon and in early evening. The trend is more apparent on Sunday noon and Friday early evening.  
